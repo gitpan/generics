@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+lib/generics.pm
+t/10_generics_test.t
