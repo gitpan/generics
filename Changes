@@ -1,5 +1,10 @@
 Revision history for Perl extension generics.
 
+0.04  Wed April 19th 2004
+    - Apparently my tests had been breaking, but no emails
+      had gotten to me from cpan-testers. I got them today
+      and the problem was easily fixed.
+
 0.03  Wed April 18th 2004
     - Pretty much complete reworking of the documentation. 
 

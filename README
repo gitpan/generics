@@ -1,4 +1,4 @@
-generics version 0.03
+generics version 0.04
 =====================
 
 INSTALLATION
@@ -12,9 +12,8 @@ To install this module type the following:
 
 DEPENDENCIES
 
-This module requires these other modules and libraries:
-
-    None
+This module requires no other modules and libraries. The test
+suite however requires Test::Exception.
 
 COPYRIGHT AND LICENCE
 

@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 19;
+use Test::More tests => 17;
 
 BEGIN { 
 	# load our test library
@@ -12,11 +12,10 @@ BEGIN {
 	# now we start testing
 	# test we can load generics
 	use_ok('generics');
-	# and test we can load out Session object
-	require_ok('Base.pm');
-	# and test we can load out DerivedSession object
-	require_ok('Derived.pm');	
 }
+
+use Base;
+use Derived;
 
 BEGIN {
 	ok(generics->has_generic_params("Base"), '... Derived has generic params');

@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 15;
+use Test::More tests => 14;
 
 BEGIN { 
 	# load our test library
@@ -12,9 +12,10 @@ BEGIN {
 	# now we start testing
 	# test we can load generics
 	use_ok('generics');
-	# and test we can load out Session object
-	require_ok('Session.pm');
+
 }
+
+use Session;
 
 BEGIN {
 	can_ok("generics", 'has_generic_params');

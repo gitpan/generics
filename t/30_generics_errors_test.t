@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 13;
+use Test::More tests => 11;
 use Test::Exception;
 
 BEGIN { 
@@ -13,11 +13,10 @@ BEGIN {
 	# now we start testing
 	# test we can load generics
 	use_ok('generics');
-	# and test we can load out Base object
-	require_ok('Base.pm');	
-	# and we want to test Session later as well
-	require_ok('Session.pm');
 }
+
+use Base;
+use Session;
 
 ok(!generics->has_generic_params("generics"), '... generics itself, does not have generic params');
 

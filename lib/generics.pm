@@ -3,7 +3,7 @@ package generics;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 sub import {
 	my ($self) = shift;
@@ -268,7 +268,7 @@ While it would be just as simple to just add the parameters to the Session objec
 
 The only drawback to the compilation time configuration is that once the module is compiled, those values are set. Of course this is not a drawback if you do not plan on changing the parameters, and want them to stay as they are through the life of your application. If your generics are designed well you will never have a need to change the parameters during runtime. If however you do need to change things are runtime, there is a way with the C<change_params> method (see below). 
 
-=head3 Configuring generics for a package
+=head2 Configuring generics for a package
 
 There is also another side to generics. The side that lives within the actual package you are attempting to configure. There a few options available to you here. First is to set paramters without defaults. Here is an example:
 
@@ -296,7 +296,7 @@ This example does just what the previous one does in terms of setting up the val
 
 This code will utilize the default setting for the C<SESSION_ID_LENGTH> param, but change the C<SESSION_TIMEOUT> param to be 120 minutes. 
 
-=head3 Types of generic parameters
+=head2 Types of generic parameters
 
 Up until now, our generic parameters have been plain scalar values, but they can also be scalar reference variables as well. This means hash references, array references and also subroutine references. The following bit of code is a  valid use of generics:
 
@@ -325,7 +325,7 @@ When using the generic parameters in the package, they should be used just like 
                     } (1 .. SESSION_ID_LENGTH);
     } 
 
-=head3 Generics and OOP
+=head2 Generics and OOP
 
 The generics pragma also is built with Object Oriented programming in mind. Since the parameters created are actually subroutines, they are easily inherited with only a few changes.
 
@@ -395,7 +395,7 @@ I use B<Devel::Cover> to test the code coverage of my tests, below is the B<Deve
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
  File                           stmt branch   cond    sub    pod   time  total
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
- /generics.pm                   98.8  100.0  100.0   92.3  100.0   11.6   98.5
+ /generics.pm                   98.8  100.0  100.0   92.3  100.0   16.5   98.5
  t/10_generics_test.t          100.0    n/a    n/a  100.0    n/a   19.1  100.0
  t/20_generics_inherit_test.t  100.0    n/a    n/a  100.0    n/a   44.7  100.0
  t/30_generics_errors_test.t   100.0    n/a    n/a  100.0    n/a   19.4  100.0
@@ -406,9 +406,8 @@ I use B<Devel::Cover> to test the code coverage of my tests, below is the B<Deve
  t/test_lib/Derived.pm         100.0    n/a    n/a  100.0    n/a    0.3  100.0
  t/test_lib/Session.pm         100.0    n/a   33.3  100.0    n/a    3.6   91.3
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
- Total                          99.6  100.0   73.3   98.4   66.7  100.0   98.1
+ Total                          99.6  100.0   73.3   98.5   66.7  100.0   98.1
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
-
 
 =head1 SEE ALSO
 
