@@ -1,5 +1,8 @@
 Revision history for Perl extension generics.
 
+0.03  Wed April 18th 2004
+    - Pretty much complete reworking of the documentation. 
+
 0.02  Wed April 14th 2004
     - fixed some documentation. The last version of Devel::Cover
 	  had an issue with modules that didnt load properly. It has 
