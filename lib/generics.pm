@@ -3,7 +3,7 @@ package generics;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 sub import {
 	my ($self) = shift;
@@ -299,19 +299,20 @@ I use B<Devel::Cover> to test the code coverage of my tests, below is the B<Deve
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
  File                           stmt branch   cond    sub    pod   time  total
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
- generics.pm                    98.4  100.0   88.9   85.7  100.0    9.0   97.2
- t/10_generics_test.t          100.0    n/a    n/a  100.0    n/a  100.0  100.0
- t/20_generics_inherit_test.t  100.0    n/a    n/a    n/a    n/a   18.6  100.0
- t/30_generics_errors_test.t   100.0    n/a    n/a  100.0    n/a   71.6  100.0
- t/test_lib/Base.pm            100.0    n/a   33.3  100.0    0.0    0.6   62.5
- t/test_lib/Session.pm         100.0    n/a   33.3  100.0    n/a    1.9   81.8
+ /generics.pm                   98.8  100.0  100.0   92.3  100.0   11.6   98.5
+ t/10_generics_test.t          100.0    n/a    n/a  100.0    n/a   19.1  100.0
+ t/20_generics_inherit_test.t  100.0    n/a    n/a  100.0    n/a   44.7  100.0
+ t/30_generics_errors_test.t   100.0    n/a    n/a  100.0    n/a   19.4  100.0
+ t/test_lib/Base.pm            100.0    n/a   33.3  100.0    0.0    0.7   85.0
+ t/test_lib/Broken.pm          100.0    n/a    n/a  100.0    n/a    0.2  100.0
+ t/test_lib/BrokenThree.pm     100.0    n/a    n/a  100.0    n/a    0.2  100.0
+ t/test_lib/BrokenTwo.pm       100.0    n/a    n/a  100.0    n/a    0.2  100.0
+ t/test_lib/Derived.pm         100.0    n/a    n/a  100.0    n/a    0.3  100.0
+ t/test_lib/Session.pm         100.0    n/a   33.3  100.0    n/a    3.6   91.3
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
- Total                          99.2  100.0   66.7   94.7   66.7  100.0   95.6
+ Total                          99.6  100.0   73.3   98.4   66.7  100.0   98.1
  ---------------------------- ------ ------ ------ ------ ------ ------ ------
 
-B<NOTE:>
-
-For some reason, B<Devel::Cover> is giving me strange results. I think it might have to do with the nature of some of my tests. In the interest of honesty and full disclosure I reproduce the stats accurately here. But in fact the statement and subroutine coverage on generics.pm should be 100%, and conditional coverage should likely be that high as well (although I have to delve further to see for sure). This may have something to do with the fact that B<Devel::Cover> is not seeing the three Broken modules at all (t/test_lib/Broken.pm, t/test_lib/BrokenTwo.pm, t/test_lib/BrokenThree.pm). It makes sense that B<Devel::Cover> is not seeing them as they do not load correctly (this is part of the test suite to test errors), but I have found in the past that B<Devel::Cover> sometimes has trouble reporting on things if it doesn't see all the modules.
 
 =head1 SEE ALSO
 
